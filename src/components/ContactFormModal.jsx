@@ -127,7 +127,7 @@ const ContactFormModal = ({
             const fetchCsrfToken = async () => {
                 try {
                     const response = await fetch(
-                        `${'http://localhost:3001'}/api/csrf-token`,
+                        `${'https://api.saiharkiran.com'}/api/csrf-token`,
                         {
                             credentials: 'include', // Important for receiving and sending cookies
                         }
@@ -201,14 +201,14 @@ const ContactFormModal = ({
 
             // Send data to the backend API with CSRF token
             const response = await fetch(
-                `${'http://localhost:3001'}/api/contact`,
+                `${'https://api.saiharkiran.com'}/api/contact`,
                 {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-Requested-With': 'XMLHttpRequest', // Helps prevent CSRF
                         'X-Request-ID': requestId,
-                        'CSRF-Token': csrfToken, 
+                        'CSRF-Token': csrfToken,
                     },
                     credentials: 'include', // Important for sending cookies with the request
                     body: JSON.stringify(sanitizedData),
