@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import WikiPortfolio from './components/WikiPortfolio';
 import LoadingScreen from './components/LoadingScreen';
 
-function App({ initialDarkMode }) {
+function App() {
     const [loading, setLoading] = useState(true);
-    const [darkMode, setDarkMode] = useState(initialDarkMode);
+    const [darkMode, setDarkMode] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
