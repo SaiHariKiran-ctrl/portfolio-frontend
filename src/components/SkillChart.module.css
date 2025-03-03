@@ -1,0 +1,220 @@
+.skillChart {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.darkMode {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skillChart:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.darkMode:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.chartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.chartInner {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.category {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.categoryLabel {
+    width: 80px;
+    font-weight: bold;
+    color: #333;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+}
+
+.darkMode .categoryLabel {
+    color: #e0e0e0;
+}
+
+.bars {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.barContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.barName {
+    width: 100px;
+    font-size: 0.9rem;
+    text-align: right;
+    color: #54595d;
+}
+
+.darkMode .barName {
+    color: #bdbdbd;
+}
+
+.barWrapper {
+    flex: 1;
+    height: 12px;
+    background-color: #eaecf0;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.darkMode .barWrapper {
+    background-color: #333;
+}
+
+.barFill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+}
+
+.category:nth-child(1) .barFill {
+    background: linear-gradient(90deg, #3366cc, #5e97f6);
+}
+
+.category:nth-child(2) .barFill {
+    background: linear-gradient(90deg, #e03131, #ff6b6b);
+}
+
+.category:nth-child(3) .barFill {
+    background: linear-gradient(90deg, #099268, #20c997);
+}
+
+.darkMode .category:nth-child(1) .barFill {
+    background: linear-gradient(90deg, #42a5f5, #90caf9);
+}
+
+.darkMode .category:nth-child(2) .barFill {
+    background: linear-gradient(90deg, #ef5350, #ff8a80);
+}
+
+.darkMode .category:nth-child(3) .barFill {
+    background: linear-gradient(90deg, #26a69a, #80cbc4);
+}
+
+.barFill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: shine 2s infinite;
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.barValue {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.chartLegend {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.darkMode .chartLegend {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #54595d;
+}
+
+.darkMode .legendItem {
+    color: #bdbdbd;
+}
+
+.legendColor {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+    .category {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .categoryLabel {
+        transform: rotate(0);
+        width: auto;
+        margin-bottom: 0.5rem;
+    }
+
+    .barContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .barName {
+        width: auto;
+        text-align: left;
+    }
+
+    .barWrapper {
+        width: 100%;
+    }
+
+    .chartLegend {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}

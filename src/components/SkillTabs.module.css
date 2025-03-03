@@ -1,0 +1,281 @@
+.skillTabs {
+    margin-bottom: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+:global(.dark-mode) .skillTabs {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tabLinks {
+    display: flex;
+    border-bottom: 1px solid #a2a9b1;
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    /* For Firefox */
+}
+
+.tabLinks::-webkit-scrollbar {
+    display: none;
+    /* For Chrome and others */
+}
+
+:global(.dark-mode) .tabLinks {
+    border-bottom: 1px solid #333;
+}
+
+.tabLink {
+    padding: 0.7rem 1.2rem;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: inherit;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.tabLink:hover {
+    color: #3366cc;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+:global(.dark-mode) .tabLink:hover {
+    color: #90caf9;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.tabLink.active {
+    border-bottom-color: #3366cc;
+    color: #3366cc;
+    font-weight: 500;
+}
+
+:global(.dark-mode) .tabLink.active {
+    border-bottom-color: #90caf9;
+    color: #90caf9;
+}
+
+.tabContent {
+    padding: 0.5rem;
+}
+
+.skillsGrid {
+    display: grid;
+    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.skillBar {
+    animation: slideInRight 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.skillInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.skillProgress {
+    height: 8px;
+    background-color: #eaecf0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+:global(.dark-mode) .skillProgress {
+    background-color: #333;
+}
+
+.skillLevel {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #3366cc, #5e97f6);
+    width: 0;
+    animation: growSkill 1s ease forwards;
+    animation-delay: inherit;
+}
+
+:global(.dark-mode) .skillLevel {
+    background: linear-gradient(90deg, #64b5f6, #90caf9);
+}
+
+@keyframes growSkill {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: var(--width);
+    }
+}
+
+.skillFootnote {
+    margin-top: 1.5rem;
+    font-size: 0.7rem;
+    color: #72777d;
+    font-style: italic;
+    text-align: left;
+}
+
+:global(.dark-mode) .skillFootnote {
+    color: #9e9e9e;
+}
+
+/* Certifications */
+.skillCertifications {
+    margin-top: 2.5rem;
+}
+
+.skillCertifications h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+    position: relative;
+    display: inline-block;
+    font-weight: 500;
+    color: #202122;
+}
+
+:global(.dark-mode) .skillCertifications h3 {
+    color: #e0e0e0;
+}
+
+.skillCertifications h3:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #3366cc;
+    bottom: -5px;
+    left: 0;
+}
+
+:global(.dark-mode) .skillCertifications h3:after {
+    background-color: #90caf9;
+}
+
+.certificationList {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.certBadge {
+    background-color: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    border-radius: 6px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:global(.dark-mode) .certBadge {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.certBadge:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+}
+
+:global(.dark-mode) .certBadge:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.certIcon {
+    width: 40px;
+    height: 40px;
+    background-color: #3366cc;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+:global(.dark-mode) .certIcon {
+    background-color: #90caf9;
+    color: #121212;
+}
+
+.certInfo h4 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #202122;
+}
+
+:global(.dark-mode) .certInfo h4 {
+    color: #e0e0e0;
+}
+
+.certInfo p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #72777d;
+}
+
+:global(.dark-mode) .certInfo p {
+    color: #9e9e9e;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .certificationList {
+        flex-direction: column;
+    }
+
+    .certBadge {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .skillsGrid {
+        grid-template-columns: unset;
+    }
+}

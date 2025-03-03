@@ -1,0 +1,133 @@
+.loadingScreen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.darkMode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3366cc, #5e97f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    animation: pulse 1.5s infinite;
+}
+
+.darkMode .logo {
+    background: linear-gradient(135deg, #90caf9, #42a5f5);
+}
+
+.wLogo {
+    font-family: 'Linux Libertine', 'Times New Roman', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+.title {
+    font-family: 'Linux Libertine', 'Times New Roman', serif;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: normal;
+    animation: fadeIn 1s ease;
+}
+
+.loadingBar {
+    width: 200px;
+    height: 4px;
+    background-color: #eaecf0;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.darkMode .loadingBar {
+    background-color: #333;
+}
+
+.progress {
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, #3366cc, #5e97f6);
+    border-radius: 2px;
+    animation: loading 1.5s infinite;
+}
+
+.darkMode .progress {
+    background: linear-gradient(90deg, #90caf9, #42a5f5);
+}
+
+.loadingText {
+    color: #72777d;
+    font-size: 1rem;
+    animation: blink 1.5s infinite;
+}
+
+.darkMode .loadingText {
+    color: #9e9e9e;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

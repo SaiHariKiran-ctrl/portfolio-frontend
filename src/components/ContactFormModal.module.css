@@ -1,0 +1,311 @@
+/* Honeypot field for bot detection */
+.honeypot {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* Modal Layout */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modalHeader {
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.modalHeader h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.modalHeader p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.closeButton:hover {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Form Styling */
+.contactForm {
+    padding: 24px;
+}
+
+.formGroup {
+    margin-bottom: 20px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+    background-color: white;
+    color: #333;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+.errorInput {
+    border-color: #e53e3e !important;
+}
+
+.errorText {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+}
+
+.darkMode .errorText {
+    color: #fc8181;
+}
+
+.errorMessage {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+/* Submit Button */
+.submitButton {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.submitButton:hover:not(:disabled) {
+    background-color: #2b6cb0;
+}
+
+.submitButton:disabled {
+    background-color: #a0aec0;
+    cursor: not-allowed;
+}
+
+/* Success Message */
+.successMessage {
+    padding: 32px 24px;
+    text-align: center;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.successIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #48bb78;
+    color: white;
+    border-radius: 50%;
+    font-size: 28px;
+    margin: 0 auto 20px;
+}
+
+.successMessage h3 {
+    margin: 0 0 12px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.successMessage p {
+    margin: 0;
+    color: #666;
+    font-size: 1rem;
+}
+
+.darkMode .successMessage h3 {
+    color: #e6e6e6;
+}
+
+.darkMode .successMessage p {
+    color: #aaa;
+}
+
+/* Dark Mode Styles */
+.modalOverlay.darkMode {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modalContent.darkMode {
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader.darkMode {
+    border-bottom-color: #333;
+}
+
+.modalHeader.darkMode h2 {
+    color: #e6e6e6;
+}
+
+.modalHeader.darkMode p {
+    color: #aaa;
+}
+
+.closeButton.darkMode {
+    color: #aaa;
+}
+
+.closeButton.darkMode:hover {
+    background-color: #2a2a2a;
+    color: #e6e6e6;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.darkMode .formGroup label {
+    color: #e6e6e6;
+}
+
+.contactForm.darkMode input,
+.contactForm.darkMode textarea {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #e6e6e6;
+}
+
+.contactForm.darkMode input:focus,
+.contactForm.darkMode textarea:focus {
+    border-color: #4299e1;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.errorMessage.darkMode {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
+.successMessage.darkMode h3 {
+    color: #e6e6e6;
+}
+
+.successMessage.darkMode p {
+    color: #aaa;
+}
+
+.submitButton.darkMode {
+    background-color: #4299e1;
+}
+
+.submitButton.darkMode:hover:not(:disabled) {
+    background-color: #3182ce;
+}
+
+.submitButton.darkMode:disabled {
+    background-color: #2d3748;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .modalContent {
+        max-width: 100%;
+    }
+
+    .modalHeader {
+        padding: 20px 20px 16px;
+    }
+
+    .contactForm {
+        padding: 20px;
+    }
+
+    .modalHeader h2 {
+        font-size: 1.3rem;
+    }
+}

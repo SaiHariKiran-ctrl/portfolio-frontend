@@ -1,0 +1,389 @@
+.tableOfContents {
+  display: table;
+  background-color: #f8f9fa;
+  border: 1px solid #a2a9b1;
+  padding: 0.7rem;
+  font-size: 0.9rem;
+  margin: 1.5rem 0;
+  width: auto;
+  min-width: 280px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark mode styles */
+:global(.dark-mode) .tableOfContents {
+  background-color: #1e1e1e;
+  border-color: #333;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tableOfContents:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+:global(.dark-mode) .tableOfContents:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Wikipedia-style corner fold effect */
+.tableOfContents:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, transparent 50%, #e0e0e0 50%);
+  border-radius: 0 0 6px 0;
+}
+
+:global(.dark-mode) .tableOfContents:after {
+  background: linear-gradient(135deg, transparent 50%, #333 50%);
+}
+
+.tocHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+:global(.dark-mode) .tocHeader {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tocTitle {
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+  font-size: 1rem;
+  display: inline-block;
+  color: #222;
+  font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+}
+
+:global(.dark-mode) .tocTitle {
+  color: #e0e0e0;
+}
+
+.tocControls {
+  display: flex;
+  align-items: center;
+}
+
+.tocHide {
+  font-size: 0.85rem;
+  color: #3366cc;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:global(.dark-mode) .tocHide {
+  color: #90caf9;
+}
+
+.tocHide:hover {
+  text-decoration: underline;
+  transform: translateY(-1px);
+}
+
+.tocBody {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tocList {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  counter-reset: item;
+}
+
+.tocItem {
+  margin: 0.4rem 0;
+  padding: 0.3rem 0.2rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tocItem:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+:global(.dark-mode) .tocItem:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.activeTocItem {
+  background-color: rgba(51, 102, 204, 0.1);
+  position: relative;
+  font-weight: 500;
+}
+
+:global(.dark-mode) .activeTocItem {
+  background-color: rgba(144, 202, 249, 0.1);
+}
+
+.activeTocItem:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #3366cc;
+  border-radius: 2px;
+}
+
+:global(.dark-mode) .activeTocItem:before {
+  background-color: #90caf9;
+}
+
+.tocLink {
+  color: #3366cc;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  transition: all 0.2s ease;
+  padding: 0.1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+:global(.dark-mode) .tocLink {
+  color: #90caf9;
+}
+
+.tocLink:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #3366cc;
+  transition: width 0.3s ease;
+}
+
+:global(.dark-mode) .tocLink:after {
+  background-color: #90caf9;
+}
+
+.tocLink:hover:after {
+  width: 100%;
+}
+
+.tocLink:hover {
+  color: #254e99;
+  text-decoration: none;
+}
+
+:global(.dark-mode) .tocLink:hover {
+  color: #64b5f6;
+}
+
+.tocNumber {
+  min-width: 2em;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  display: inline-flex;
+  align-items: center;
+}
+
+.tocNumber:after {
+  content: '.';
+  margin-right: 0.3em;
+}
+
+.tocText {
+  flex: 1;
+  position: relative;
+}
+
+.tocSublist {
+  margin: 0.3rem 0 0.3rem 1.5rem;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tocSubitem {
+  margin: 0.3rem 0;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tocSubitem:hover {
+  background-color: rgba(0,0,0,0.05);
+}
+
+:global(.dark-mode) .tocSubitem:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+/* Add connecting lines for hierarchy */
+.tocSubitem:before {
+  content: '';
+  position: absolute;
+  left: -0.8rem;
+  top: 0.7rem;
+  width: 0.6rem;
+  height: 1px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+:global(.dark-mode) .tocSubitem:before {
+  background-color: rgba(255,255,255,0.2);
+}
+
+.tocLegend {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.8rem;
+  color: #72777d;
+}
+
+:global(.dark-mode) .tocLegend {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #9e9e9e;
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  background-color: #3366cc;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 rgba(51, 102, 204, 0.4);
+}
+
+:global(.dark-mode) .legendDot {
+  background-color: #90caf9;
+  box-shadow: 0 0 0 rgba(144, 202, 249, 0.4);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(51, 102, 204, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(51, 102, 204, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(51, 102, 204, 0);
+  }
+}
+
+:global(.dark-mode) .legendDot {
+  animation: darkPulse 2s infinite;
+}
+
+@keyframes darkPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(144, 202, 249, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(144, 202, 249, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(144, 202, 249, 0);
+  }
+}
+
+.legendText {
+  font-style: italic;
+}
+
+/* Wikipedia-style hover effect */
+.tableOfContents:hover .legendDot {
+  animation-duration: 1s;
+}
+
+/* Print-specific styles */
+@media print {
+  .tableOfContents {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    background-color: #fff !important;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    color: #000 !important;
+  }
+  
+  .tocHide {
+    display: none;
+  }
+  
+  .tocLink {
+    color: #000 !important;
+  }
+  
+  .activeTocItem:before {
+    background-color: #000 !important;
+  }
+  
+  .legendDot {
+    animation: none;
+    background-color: #000 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .tableOfContents {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .tocLink {
+    font-size: 0.95rem;
+  }
+  
+  .tocNumber {
+    min-width: 1.5em;
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+  .tableOfContents {
+    padding: 0.5rem;
+  }
+  
+  .tocHeader {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+  }
+  
+  .tocLink {
+    font-size: 0.9rem;
+  }
+}

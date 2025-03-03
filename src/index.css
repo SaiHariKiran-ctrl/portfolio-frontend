@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #3366cc;
+  --primary-light: #5e97f6;
+  --primary-dark: #254e99;
+  --neutral-50: #f8f9fa;
+  --neutral-100: #eaecf0;
+  --neutral-200: #d5d7db;
+  --neutral-300: #a2a9b1;
+  --neutral-400: #72777d;
+  --neutral-500: #54595d;
+  --neutral-600: #202122;
+  --accent: #e07c00;
+  --success: #00af89;
+  --background: #ffffff;
+  --text: #202122;
+  --text-light: #72777d;
+  --border: #a2a9b1;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+.dark-mode {
+  --primary: #90caf9;
+  --primary-light: #64b5f6;
+  --primary-dark: #42a5f5;
+  --neutral-50: #1e1e1e;
+  --neutral-100: #2a2a2a;
+  --neutral-200: #333;
+  --neutral-300: #444;
+  --neutral-400: #9e9e9e;
+  --neutral-500: #bdbdbd;
+  --neutral-600: #e0e0e0;
+  --background: #121212;
+  --text: #e0e0e0;
+  --text-light: #9e9e9e;
+  --border: #333;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  --shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--background);
+  transition: var(--transition);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Remove button styling */
+button {
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-50);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--neutral-400);
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+.dark-mode ::selection {
+  background-color: var(--primary-dark);
+  color: var(--text);
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Helper classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-in-out;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.5s ease-in-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Tooltip styles for interactive elements */
+[data-tooltip] {
+  position: relative;
+}
+
+[data-tooltip]:after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--neutral-600);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 100;
+}
+
+[data-tooltip]:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dark-mode [data-tooltip]:after {
+  background-color: var(--neutral-300);
+  color: var(--text);
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+a:focus,
+button:focus {
+  /* Remove default browser outline */
+  outline: none;
+}
+
+/* Only show focus styles for keyboard navigation, not mouse clicks */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Add styles to remove outline on mouse interaction but keep keyboard focus */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.section {
+  margin: 2.5rem 0;
+  padding-top: 20px;
+  scroll-margin-top: 80px;
+  clear: both;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  padding: 20px 0.5rem 0.5rem 0.5rem;
+}
+
+.section::before {
+  content: '';
+  display: block;
+  height: 80px;
+  margin-top: -80px;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.sectionTitle {
+  position: relative;
+  z-index: 1;
+}
