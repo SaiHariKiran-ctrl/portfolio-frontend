@@ -6,6 +6,7 @@ import {
     Award,
     Layers,
     Link as LinkIcon,
+    Home,
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
@@ -40,7 +41,7 @@ const Sidebar = ({ isOpen, activeSection, darkMode, onClose }) => {
             id: 'main',
             title: 'Main page',
             href: '#',
-            icon: <BookOpen size={16} />,
+            icon: <Home size={16} />,
         },
         {
             id: 'early-life',
