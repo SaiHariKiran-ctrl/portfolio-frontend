@@ -249,12 +249,11 @@ const WikiPortfolio = () => {
                                     Sai Hari Kiran
                                 </span>{' '}
                                 is a skilled Full Stack Developer with over{' '}
-                                <DynamicYearsCounter />
-                                years of experience in web development and AI
-                                applications. He has worked with modern frontend
-                                frameworks, backend systems, and emerging AI
-                                technologies, allowing him to build end-to-end
-                                solutions
+                                <DynamicYearsCounter /> years of experience in
+                                web development and AI applications. He has
+                                worked with modern frontend frameworks, backend
+                                systems, and emerging AI technologies, allowing
+                                him to build end-to-end solutions
                             </p>
 
                             {/* <p>
