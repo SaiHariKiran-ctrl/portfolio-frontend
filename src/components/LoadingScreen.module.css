@@ -37,14 +37,14 @@
 }
 
 .wLogo {
-    font-family: 'Linux Libertine', 'Times New Roman', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 3rem;
     font-weight: bold;
     color: white;
 }
 
 .title {
-    font-family: 'Linux Libertine', 'Times New Roman', serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: normal;

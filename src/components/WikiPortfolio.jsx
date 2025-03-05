@@ -368,8 +368,7 @@ const WikiPortfolio = () => {
                                     <div className={styles.currentPosition}>
                                         <h3>Full Stack Developer</h3>
                                         <h4>
-                                            X-verity Web Design and Development
-                                            Agency
+                                            X-verity Web Design and Graphics
                                         </h4>
                                         <p>June 2023 - Present</p>
                                     </div>
@@ -416,7 +415,18 @@ const WikiPortfolio = () => {
 
                                 <div className={styles.projectCard}>
                                     <div className={styles.projectCardHeader}>
-                                        <h4>Enterprise Website Development</h4>
+                                        <h4>
+                                            Enterprise Website Development{' '}
+                                            <span style={{ fontSize: '14px' }}>
+                                                <a
+                                                    href="https://qcentrio.com/"
+                                                    target="_blank"
+                                                    className="flex items-center gap-1 text-blue-600 hover:underline">
+                                                    Visit{' '}
+                                                    <ExternalLink size={14} />
+                                                </a>
+                                            </span>
+                                        </h4>
                                         {/* <span className={styles.projectBadge}>
                                             Flagship Project
                                         </span> */}
@@ -499,7 +509,16 @@ const WikiPortfolio = () => {
                                 <div className={styles.projectCard}>
                                     <div className={styles.projectCardHeader}>
                                         <h4>
-                                            Electric Meter Management System
+                                            Electric Meter Management System{' '}
+                                            <span style={{ fontSize: '14px' }}>
+                                                <a
+                                                    href="https://lk-ea.co.in/TGNPDCL/"
+                                                    target="_blank"
+                                                    className="flex items-center gap-1 text-blue-600 hover:underline">
+                                                    Visit{' '}
+                                                    <ExternalLink size={14} />
+                                                </a>
+                                            </span>
                                         </h4>
                                     </div>
                                     <p>
@@ -578,8 +597,11 @@ const WikiPortfolio = () => {
                                                 'Developed a custom CMS for managing specific pages and handling form submissions efficiently.',
                                             ],
                                             featured: false,
-                                            link: '',
+                                            link: 'https://qcentrio.com/',
+                                            gitLink: '',
+                                            videoUrl: null,
                                         },
+
                                         {
                                             title: 'Electric Meter Management System',
                                             description:
@@ -596,7 +618,9 @@ const WikiPortfolio = () => {
                                                 'Implemented secure authentication and role-based access control for enhanced data security.',
                                             ],
                                             featured: false,
-                                            link: '',
+                                            link: 'https://lk-ea.co.in/TGNPDCL',
+                                            gitLink: '',
+                                            videoUrl: 'lkea.mp4',
                                         },
                                         {
                                             title: 'Image-to-3D Point Cloud Generator',
@@ -615,7 +639,10 @@ const WikiPortfolio = () => {
                                                 'Identified key challenges in generalizing point cloud generation, setting the stage for further research.',
                                             ],
                                             featured: false,
-                                            link: 'https://github.com/SaiHariKiran-ctrl/image-to-point-cloud',
+                                            link: '',
+                                            gitLink:
+                                                'https://github.com/SaiHariKiran-ctrl/image-to-point-cloud',
+                                            videoUrl: '/img-point-cloud.mp4',
                                         },
                                     ].map((project) => (
                                         <div
@@ -644,7 +671,29 @@ const WikiPortfolio = () => {
                                                 }>
                                                 {project.description}
                                             </p>
-
+                                            {project.videoUrl && (
+                                                <div
+                                                    className={
+                                                        styles.videoContainer
+                                                    }>
+                                                    <div
+                                                        className={
+                                                            styles.videoWrapper
+                                                        }>
+                                                        <video
+                                                            id={`video-${project.id}`}
+                                                            className={
+                                                                styles.video
+                                                            }
+                                                            src={
+                                                                project.videoUrl
+                                                            }
+                                                            controls
+                                                            autoplay
+                                                        />
+                                                    </div>
+                                                </div>
+                                            )}
                                             <h4
                                                 className={
                                                     styles.projectSubtitle
@@ -674,21 +723,29 @@ const WikiPortfolio = () => {
                                                     )
                                                 )}
                                             </div>
-                                            {project.link.length > 0 && (
-                                                <div
-                                                    className={
-                                                        styles.projectLinks
-                                                    }>
+                                            <div
+                                                className={styles.projectLinks}>
+                                                {project.link.length > 0 && (
                                                     <a
                                                         target="_blank"
                                                         href={project.link}
                                                         className={
                                                             styles.projectLink
                                                         }>
+                                                        Visit
+                                                    </a>
+                                                )}
+                                                {project.gitLink.length > 0 && (
+                                                    <a
+                                                        target="_blank"
+                                                        href={project.gitLink}
+                                                        className={
+                                                            styles.projectLink
+                                                        }>
                                                         Github Link
                                                     </a>
-                                                </div>
-                                            )}
+                                                )}
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
