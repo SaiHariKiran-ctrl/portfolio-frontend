@@ -1,8 +1,7 @@
 .container {
   min-height: 100vh;
   background-color: #ffffff;
-  font-family: 'Roboto', sans-serif;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 /* Dark Mode Support */
@@ -21,21 +20,21 @@
 
 .darkMode .header {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .darkMode .infobox {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .darkMode .tableOfContents {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .darkMode .sectionTitle {
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .darkMode .editLink {
@@ -44,21 +43,21 @@
 
 .darkMode .projectCard {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .darkMode .techTag {
-  background-color: #333;
+  background-color: var(--border);
   color: #e0e0e0;
 }
 
 .darkMode .skillProgress {
-  background-color: #333;
+  background-color: var(--border);
 }
 
 .darkMode .externalCard {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 /* Header */
@@ -66,10 +65,10 @@
   position: sticky;
   top: 0;
   background-color: #ffffff;
-  border-bottom: 1px solid #a2a9b1;
+  border-bottom: 1px solid var(--border);
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .headerContent {
@@ -89,7 +88,7 @@
   padding: 0.5rem;
   cursor: pointer;
   display: block;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .menuToggle:hover {
@@ -97,7 +96,6 @@
 }
 
 .headerTitle {
-  font-family: 'Roboto', sans-serif;
   position: relative;
 }
 
@@ -107,7 +105,7 @@
   margin: 0;
   cursor: pointer;
   position: relative;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .headerTitle h1:hover {
@@ -163,7 +161,7 @@
   justify-content: center;
   padding: 0.25rem;
   border-radius: 50%;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .darkModeToggle:hover {
@@ -177,7 +175,7 @@
 .contactLink {
   color: #3366cc;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   position: relative;
 }
 
@@ -189,7 +187,7 @@
   background-color: #3366cc;
   bottom: -2px;
   left: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .contactLink:hover:after {
@@ -278,12 +276,12 @@
   float: right;
   margin: 0 0 1rem 1rem;
   background-color: #f8f9fa;
-  border: 1px solid #a2a9b1;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1rem;
   width: 280px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .infobox:hover {
@@ -308,7 +306,7 @@
   font-size: 2.5rem;
   font-weight: bold;
   margin: 0 auto 0.8rem;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -367,11 +365,11 @@
   gap: 0.8rem;
   margin-top: 1rem;
   padding-top: 0.8rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--border);
 }
 
 .darkMode .infoboxLinks {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--border);
 }
 
 .infoboxLink {
@@ -379,7 +377,7 @@
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .infoboxLink:hover {
@@ -419,8 +417,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  transition: all 0.3s ease;
-  padding: 0.5rem;
+  transition: var(--transition);
+  padding: 1rem;
 }
 
 .section:hover {
@@ -442,8 +440,7 @@
 }
 
 .sectionTitle {
-  font-family: 'Roboto', sans-serif;
-  border-bottom: 1px solid #a2a9b1;
+  border-bottom: 1px solid var(--border);
   padding-bottom: 0.17rem;
   margin-bottom: 1.2rem;
   overflow: hidden;
@@ -458,6 +455,10 @@
   padding: 0.5rem;
 }
 
+.sectionContent .projectCard:last-child{
+  margin-bottom: 0px;
+}
+
 .editLink {
   color: #72777d;
   font-size: 0.85rem;
@@ -465,7 +466,7 @@
   text-decoration: none;
   font-weight: normal;
   opacity: 0.7;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .editLink:hover {
@@ -489,7 +490,7 @@
   border-radius: 4px;
   font-weight: bold;
   height: fit-content;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   margin-right: 20px
 }
 
@@ -532,12 +533,13 @@
 /* Quote Box */
 .quoteBox {
   margin: 1.5rem 0;
+  margin-bottom: 0px;
   padding: 1.5rem;
   background-color: #f8f9fa;
   border-left: 4px solid #3366cc;
   font-style: italic;
   position: relative;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .quoteBox {
@@ -631,10 +633,10 @@
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   padding: 1.5rem;
-  border: 1px solid #a2a9b1;
+  border: 1px solid var(--border);
   border-radius: 6px;
   background-color: #f8f9fa;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .projectCard:hover {
@@ -708,7 +710,7 @@
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 0.85rem;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .techTag:hover {
@@ -733,7 +735,7 @@
 }
 
 .darkMode .mockupDisplay {
-  background-color: #333;
+  background-color: var(--border);
 }
 
 .mockupScreen {
@@ -813,7 +815,7 @@
 
 .tabLinks {
   display: flex;
-  border-bottom: 1px solid #a2a9b1;
+  border-bottom: 1px solid var(--border);
   margin-bottom: 1.5rem;
   overflow-x: auto;
   scrollbar-width: none;
@@ -830,11 +832,10 @@
   background: transparent;
   border: none;
   border-bottom: 3px solid transparent;
-  font-family: inherit;
   font-size: 1rem;
   color: inherit;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: var(--transition);
   white-space: nowrap;
 }
 
@@ -943,7 +944,7 @@
 
 .certBadge {
   background-color: #f8f9fa;
-  border: 1px solid #a2a9b1;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1rem;
   display: flex;
@@ -951,12 +952,12 @@
   gap: 1rem;
   flex: 1;
   min-width: 250px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .certBadge {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .certBadge:hover {
@@ -995,18 +996,18 @@
 }
 
 .projectArticle {
-  border: 1px solid #a2a9b1;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1.5rem;
   background-color: #f8f9fa;
   position: relative;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   overflow: hidden;
 }
 
 .darkMode .projectArticle {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .projectArticle:hover {
@@ -1086,7 +1087,7 @@
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .darkMode .projectLink {
@@ -1105,7 +1106,7 @@
   background-color: #3366cc;
   bottom: -3px;
   left: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .projectLink:after {
@@ -1131,7 +1132,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid #3366cc;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .moreProjectsLink {
@@ -1176,7 +1177,7 @@
   background-color: #3366cc;
   border-radius: 6px;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .publicationEntry:hover .publicationIcon {
@@ -1213,14 +1214,14 @@
 
 .publicationStats .statItem {
   background-color: #f0f0f0;
-  color: #333;
+  color: var(--border);
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 0.85rem;
 }
 
 .darkMode .publicationStats .statItem {
-  background-color: #333;
+  background-color: var(--border);
   color: #e0e0e0;
 }
 
@@ -1232,7 +1233,7 @@
   text-decoration: none;
   margin-top: 0.8rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .darkMode .publicationLink {
@@ -1292,7 +1293,7 @@
 .graphDay {
   background-color: #3366cc;
   border-radius: 2px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .graphDay {
@@ -1308,12 +1309,13 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
 }
+
 
 .externalCard {
   background-color: #f8f9fa;
-  border: 1px solid #a2a9b1;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 1.5rem;
   display: flex;
@@ -1321,14 +1323,14 @@
   gap: 1rem;
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
 
 .darkMode .externalCard {
   background-color: #1e1e1e;
-  border-color: #333;
+  border-color: var(--border);
 }
 
 .externalCard:hover {
@@ -1360,7 +1362,7 @@
   justify-content: center;
   color: #3366cc;
   flex-shrink: 0;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .externalCardIcon {
@@ -1403,7 +1405,7 @@
   top: 1rem;
   right: 1rem;
   color: #72777d;
-  transition: all 0.2s ease;
+  transition: var(--transition);
 }
 
 .darkMode .externalCardLink {
@@ -1425,7 +1427,7 @@
   padding: 2rem;
   background: linear-gradient(45deg, #3366cc11, #3366cc22);
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .contactCTA {
@@ -1453,7 +1455,7 @@
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  transition: all 0.3s ease;
+  transition: var(--transition);
 }
 
 .darkMode .contactButton {
@@ -1475,11 +1477,11 @@
 .articleFooter {
   margin-top: 3rem;
   padding-top: 1.5rem;
-  border-top: 1px solid #a2a9b1;
+  border-top: 1px solid var(--border);
 }
 
 .darkMode .articleFooter {
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border);
 }
 
 .footerCategories {

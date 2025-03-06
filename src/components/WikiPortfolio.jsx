@@ -125,14 +125,14 @@ const WikiPortfolio = () => {
                     </button>
 
                     <div className={styles.headerTitle}>
-                        <h1 onClick={triggerEasterEgg}>
+                        <h1 >
                             Vasupalli Sai Hari Kiran
                         </h1>
-                        {showEasterEgg && (
+                        {/* {showEasterEgg && (
                             <div className={styles.easterEgg}>
                                 <span>You found a hidden feature! 🎉</span>
                             </div>
-                        )}
+                        )} */}
                     </div>
 
                     <div className={styles.headerControls}>
@@ -620,7 +620,7 @@ const WikiPortfolio = () => {
                                             featured: false,
                                             link: 'https://lk-ea.co.in/TGNPDCL',
                                             gitLink: '',
-                                            videoUrl: 'lkea.mp4',
+                                            videoUrl: '/vids/lkea.mp4',
                                         },
                                         {
                                             title: 'Image-to-3D Point Cloud Generator',
@@ -642,7 +642,8 @@ const WikiPortfolio = () => {
                                             link: '',
                                             gitLink:
                                                 'https://github.com/SaiHariKiran-ctrl/image-to-point-cloud',
-                                            videoUrl: '/img-point-cloud.mp4',
+                                            videoUrl:
+                                                '/vids/img-point-cloud.mp4',
                                         },
                                     ].map((project) => (
                                         <div

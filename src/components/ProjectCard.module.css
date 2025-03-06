@@ -1,17 +1,17 @@
 .projectCard {
     background-color: #f8f9fa;
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5rem;
     position: relative;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     overflow: hidden;
     height: fit-content;
 }
 
 .darkMode {
     background-color: #1e1e1e;
-    border-color: #333;
+    border-color: var(--border);
 }
 
 .projectCard:hover {
@@ -124,7 +124,7 @@
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .darkMode .techTag {
@@ -303,7 +303,7 @@
     width: 0;
     height: 2px;
     background-color: #3366cc;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .darkMode .actionLink:after {

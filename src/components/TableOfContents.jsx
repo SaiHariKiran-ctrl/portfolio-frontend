@@ -143,12 +143,12 @@ const TableOfContents = ({ activeSection }) => {
                         ))}
                     </ol>
 
-                    <div className={styles.tocLegend}>
+                    {/* <div className={styles.tocLegend}>
                         <span className={styles.legendDot}></span>
                         <span className={styles.legendText}>
                             Current section
                         </span>
-                    </div>
+                    </div> */}
                 </div>
             )}
         </div>

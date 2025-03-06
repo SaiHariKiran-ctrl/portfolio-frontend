@@ -4,7 +4,7 @@
     padding: 1.5rem;
     margin: 1.5rem 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .darkMode {
@@ -160,11 +160,11 @@
     gap: 1.5rem;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border);
 }
 
 .darkMode .chartLegend {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--border);
 }
 
 .legendItem {

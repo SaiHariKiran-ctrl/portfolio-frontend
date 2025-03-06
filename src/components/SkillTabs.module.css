@@ -1,5 +1,5 @@
 .skillTabs {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     background-color: #f8f9fa;
     border-radius: 8px;
     padding: 1.5rem;
@@ -13,7 +13,7 @@
 
 .tabLinks {
     display: flex;
-    border-bottom: 1px solid #a2a9b1;
+    border-bottom: 1px solid var(--border);
     margin-bottom: 1.5rem;
     overflow-x: auto;
     scrollbar-width: none;
@@ -26,7 +26,7 @@
 }
 
 :global(.dark-mode) .tabLinks {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--border);
 }
 
 .tabLink {
@@ -34,7 +34,6 @@
     background: transparent;
     border: none;
     border-bottom: 3px solid transparent;
-    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     color: inherit;
     cursor: pointer;
@@ -184,7 +183,7 @@
 
 .certBadge {
     background-color: #f8f9fa;
-    border: 1px solid #a2a9b1;
+    border: 1px solid var(--border);
     border-radius: 6px;
     padding: 1rem;
     display: flex;
@@ -211,7 +210,7 @@
 
 :global(.dark-mode) .certBadge {
     background-color: #1e1e1e;
-    border-color: #333;
+    border-color: var(--border);
 }
 
 .certBadge:hover {

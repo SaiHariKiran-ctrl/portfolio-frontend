@@ -51,7 +51,7 @@
 
 .modalHeader {
     padding: 24px 24px 16px;
-    border-bottom: 1px solid #eaeaea;
+    border-bottom: 1px solid var(--border);
 }
 
 .modalHeader h2 {
@@ -109,7 +109,7 @@
 .formGroup textarea {
     width: 100%;
     padding: 10px 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 6px;
     font-size: 1rem;
     transition: border-color 0.2s;
@@ -222,7 +222,7 @@
 }
 
 .modalHeader.darkMode {
-    border-bottom-color: #333;
+    border-bottom-color: var(--border);
 }
 
 .modalHeader.darkMode h2 {

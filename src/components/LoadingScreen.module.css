@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    transition: all 0.3s ease;
+    transition: var(--transition);
 }
 
 .darkMode {
@@ -37,14 +37,12 @@
 }
 
 .wLogo {
-    font-family: 'Roboto', sans-serif;
     font-size: 3rem;
     font-weight: bold;
     color: white;
 }
 
 .title {
-    font-family: 'Roboto', sans-serif;
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: normal;
