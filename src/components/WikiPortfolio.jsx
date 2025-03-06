@@ -259,7 +259,7 @@ const WikiPortfolio = () => {
                             {/* <p>
                                 Known for creating responsive, user-centric
                                 applications ranging from corporate websites to
-                                complex enterprise dashboards, his work
+                                complex corporate dashboards, his work
                                 demonstrates a strong commitment to both
                                 technical excellence and business impact.
                             </p> */}
@@ -416,7 +416,7 @@ const WikiPortfolio = () => {
                                 <div className={styles.projectCard}>
                                     <div className={styles.projectCardHeader}>
                                         <h4>
-                                            Enterprise Website Development{' '}
+                                            Corporate Website Development{' '}
                                             <span style={{ fontSize: '14px' }}>
                                                 <a
                                                     href="https://qcentrio.com/"
@@ -583,7 +583,7 @@ const WikiPortfolio = () => {
                                 <div className={styles.projectGrid}>
                                     {[
                                         {
-                                            title: 'Qcentrio Enterprise Website',
+                                            title: 'Qcentrio Corporate Website',
                                             description:
                                                 'A comprehensive 50-page dynamic corporate website featuring advanced SEO optimization and sophisticated performance strategies.',
                                             technologies: [
@@ -790,7 +790,7 @@ const WikiPortfolio = () => {
                                             }>
                                             <h3>
                                                 Technical Blog: "Optimizing
-                                                React Performance in Enterprise
+                                                React Performance in Corporate
                                                 Applications"
                                             </h3>
                                             <p
