@@ -10,7 +10,14 @@ import {
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
-const Sidebar = ({ isOpen, activeSection, darkMode, onClose }) => {
+const Sidebar = ({
+    isOpen,
+    activeSection,
+    darkMode,
+    onClose,
+    toggleButtonRef,
+}) => {
+    console.log('isOpen', isOpen);
     const sidebarClasses = isOpen
         ? `${styles.sidebar} ${styles.open} ${darkMode ? styles.darkMode : ''}`
         : `${styles.sidebar} ${darkMode ? styles.darkMode : ''}`;
@@ -20,6 +27,13 @@ const Sidebar = ({ isOpen, activeSection, darkMode, onClose }) => {
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (!isOpen) return;
+
+            if (
+                toggleButtonRef.current &&
+                toggleButtonRef.current.contains(event.target)
+            ) {
+                return;
+            }
 
             if (
                 sidebarRef.current &&
@@ -34,7 +48,7 @@ const Sidebar = ({ isOpen, activeSection, darkMode, onClose }) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [isOpen, onClose]);
+    }, [isOpen, onClose, toggleButtonRef]);
 
     const navLinks = [
         {
@@ -119,7 +133,6 @@ const Sidebar = ({ isOpen, activeSection, darkMode, onClose }) => {
 
                 <nav className={styles.sidebarNav}>
                     {navLinks.map((item) => {
-                        // Simple active state check
                         const isActive = activeSection === item.id;
 
                         return (

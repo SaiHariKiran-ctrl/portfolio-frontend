@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
     ChevronDown,
     ChevronRight,
@@ -24,6 +24,8 @@ const WikiPortfolio = () => {
     const [activeSection, setActiveSection] = useState(null);
     const [showEasterEgg, setShowEasterEgg] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const toggleButtonRef = useRef(null);
+
     const email = 'saiharikiran.vasu@gmail.com';
 
     const toggleDarkMode = () => {
@@ -118,6 +120,7 @@ const WikiPortfolio = () => {
             <header className={styles.header}>
                 <div className={styles.headerContent}>
                     <button
+                        ref={toggleButtonRef}
                         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
                         className={styles.menuToggle}
                         aria-label="Toggle sidebar">
@@ -125,9 +128,7 @@ const WikiPortfolio = () => {
                     </button>
 
                     <div className={styles.headerTitle}>
-                        <h1 >
-                            Vasupalli Sai Hari Kiran
-                        </h1>
+                        <h1>Vasupalli Sai Hari Kiran</h1>
                         {/* {showEasterEgg && (
                             <div className={styles.easterEgg}>
                                 <span>You found a hidden feature! 🎉</span>
@@ -159,6 +160,7 @@ const WikiPortfolio = () => {
                     activeSection={activeSection}
                     darkMode={darkMode}
                     onClose={closeSidebar}
+                    toggleButtonRef={toggleButtonRef}
                 />
 
                 <main className={styles.mainContent}>
@@ -690,7 +692,6 @@ const WikiPortfolio = () => {
                                                                 project.videoUrl
                                                             }
                                                             controls
-                                                            autoplay
                                                         />
                                                     </div>
                                                 </div>
