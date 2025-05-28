@@ -14,6 +14,28 @@ const ProjectCard = ({ project, darkMode }) => {
 
             <div className={styles.projectHeader}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
+                {(project.link || project.gitLink) && (
+                    <div className={styles.projectActions}>
+                        {project.link && (
+                            <a
+                                href={project.link}
+                                className={styles.actionLink}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                Live Demo <ExternalLink size={14} />
+                            </a>
+                        )}
+                        {project.gitLink && (
+                            <a
+                                href={project.gitLink}
+                                className={styles.actionLink}
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                View Code <ExternalLink size={14} />
+                            </a>
+                        )}
+                    </div>
+                )}
             </div>
 
             {project.videoUrl && (
@@ -75,29 +97,6 @@ const ProjectCard = ({ project, darkMode }) => {
                             </div>
                         </div>
                     </div>
-                </div>
-            )}
-
-            {(project.link || project.gitLink) && (
-                <div className={styles.projectActions}>
-                    {project.link && (
-                        <a
-                            href={project.link}
-                            className={styles.actionLink}
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Live Demo <ExternalLink size={14} />
-                        </a>
-                    )}
-                    {project.gitLink && (
-                        <a
-                            href={project.gitLink}
-                            className={styles.actionLink}
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            View Code <ExternalLink size={14} />
-                        </a>
-                    )}
                 </div>
             )}
         </div>

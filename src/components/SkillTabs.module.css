@@ -50,7 +50,7 @@
 
 :global(.dark-mode) .tabLink:hover {
     color: #90caf9;
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: rgba(144, 202, 249, 0.05);
 }
 
 .tabLink.active {
@@ -132,10 +132,10 @@
 }
 
 .darkMode .categoryIcon {
-    background: linear-gradient(135deg, #64b5f6, #90caf9);
+    background: #90caf9;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 2px 4px rgba(100, 181, 246, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(144, 202, 249, 0.2));
 }
 
 .categoryTitle {

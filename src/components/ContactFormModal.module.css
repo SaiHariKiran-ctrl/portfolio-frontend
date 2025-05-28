@@ -112,6 +112,7 @@
     border: 1px solid var(--border);
     border-radius: 6px;
     font-size: 1rem;
+    font-family: var(--font-family-base);
     transition: border-color 0.2s;
     background-color: white;
     color: #333;
@@ -150,7 +151,7 @@
 
 /* Submit Button */
 .submitButton {
-    background-color: #3182ce;
+    background-color: #001b50;
     color: white;
     border: none;
     padding: 12px 20px;
@@ -162,9 +163,9 @@
     width: 100%;
 }
 
-.submitButton:hover:not(:disabled) {
+/* .submitButton:hover:not(:disabled) {
     background-color: #2b6cb0;
-}
+} */
 
 .submitButton:disabled {
     background-color: #a0aec0;

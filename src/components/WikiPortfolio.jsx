@@ -139,7 +139,7 @@ const WikiPortfolio = () => {
                     </div>
 
                     <div className={styles.headerControls}>
-                        <button
+                        {/* <button
                             className={styles.darkModeToggle}
                             onClick={toggleDarkMode}
                             aria-label={
@@ -148,7 +148,7 @@ const WikiPortfolio = () => {
                                     : 'Switch to dark mode'
                             }>
                             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-                        </button>
+                        </button> */}
                         <a
                             href="/sai_hari_kiran_resume.pdf"
                             download

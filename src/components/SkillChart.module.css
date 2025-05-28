@@ -111,15 +111,15 @@
 }
 
 .darkMode .category:nth-child(1) .barFill {
-    background: linear-gradient(90deg, #42a5f5, #90caf9);
+    background: #90caf9;
 }
 
 .darkMode .category:nth-child(2) .barFill {
-    background: linear-gradient(90deg, #ef5350, #ff8a80);
+    background: #90caf9;
 }
 
 .darkMode .category:nth-child(3) .barFill {
-    background: linear-gradient(90deg, #26a69a, #80cbc4);
+    background: #90caf9;
 }
 
 .barFill::before {
