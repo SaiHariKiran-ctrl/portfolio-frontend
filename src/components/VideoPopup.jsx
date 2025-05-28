@@ -1,24 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import styles from './VideoPopup.module.css';
 
 const VideoPopup = ({ videoSources }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const [currentVideo, setCurrentVideo] = useState(null);
     const modalRef = useRef(null);
     const videoRef = useRef(null);
-
-    const openPopup = (videoUrl) => {
-        setCurrentVideo(videoUrl);
-        setIsOpen(true);
-        document.body.style.overflow = 'hidden';
-    };
+    const video = videoSources[0]; // We only need the first video
 
     const closePopup = () => {
         if (videoRef.current) {
             videoRef.current.pause();
         }
-        setIsOpen(false);
         document.body.style.overflow = '';
     };
 
@@ -35,65 +27,32 @@ const VideoPopup = ({ videoSources }) => {
             }
         };
 
-        if (isOpen) {
-            document.addEventListener('keydown', handleEscKey);
-        }
+        document.addEventListener('keydown', handleEscKey);
+        document.body.style.overflow = 'hidden';
 
         return () => {
             document.removeEventListener('keydown', handleEscKey);
+            document.body.style.overflow = '';
         };
-    }, [isOpen]);
+    }, []);
 
     return (
-        <>
-            <div className={styles.videoGrid}>
-                {videoSources.map((video, index) => (
-                    <div
-                        key={index}
-                        className={styles.videoThumbnail}
-                        onClick={() => openPopup(video.url)}>
-                        <div className={styles.thumbnailOverlay}>
-                            <span className={styles.playIcon}>▶</span>
-                        </div>
-                        {video.thumbnail ? (
-                            <img
-                                src={video.thumbnail}
-                                alt={video.title}
-                                className={styles.thumbnailImage}
-                            />
-                        ) : (
-                            <div className={styles.placeholderThumbnail}>
-                                <span>{video.title}</span>
-                            </div>
-                        )}
-                        <h4 className={styles.videoTitle}>{video.title}</h4>
-                    </div>
-                ))}
-            </div>
-
-            {isOpen && (
-                <div
-                    className={styles.modalOverlay}
-                    onClick={handleOutsideClick}>
-                    <div className={styles.modalContent} ref={modalRef}>
-                        <button
-                            className={styles.closeButton}
-                            onClick={closePopup}>
-                            <X size={24} />
-                        </button>
-                        <div className={styles.videoContainer}>
-                            <video
-                                ref={videoRef}
-                                className={styles.videoPlayer}
-                                src={currentVideo}
-                                controls
-                                autoPlay
-                            />
-                        </div>
-                    </div>
+        <div className={styles.modalOverlay} onClick={handleOutsideClick}>
+            <div className={styles.modalContent} ref={modalRef}>
+                <button className={styles.closeButton} onClick={closePopup}>
+                    <X size={24} />
+                </button>
+                <div className={styles.videoContainer}>
+                    <video
+                        ref={videoRef}
+                        className={styles.videoPlayer}
+                        src={video.url}
+                        controls
+                        autoPlay
+                    />
                 </div>
-            )}
-        </>
+            </div>
+        </div>
     );
 };
 

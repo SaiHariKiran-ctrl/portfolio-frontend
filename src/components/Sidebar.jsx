@@ -7,6 +7,7 @@ import {
     Layers,
     Link as LinkIcon,
     Home,
+    User,
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
@@ -53,9 +54,9 @@ const Sidebar = ({
     const navLinks = [
         {
             id: 'main',
-            title: 'Main page',
+            title: 'Introduction',
             href: '#',
-            icon: <Home size={16} />,
+            icon: <User size={16} />,
         },
         {
             id: 'early-life',
@@ -77,13 +78,13 @@ const Sidebar = ({
         },
         {
             id: 'projects',
-            title: 'Notable Projects',
+            title: 'Projects',
             href: '#projects',
             icon: <Layers size={16} />,
         },
         {
             id: 'references',
-            title: 'External Links',
+            title: 'Contact',
             href: '#references',
             icon: <LinkIcon size={16} />,
         },

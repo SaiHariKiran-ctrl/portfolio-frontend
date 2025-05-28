@@ -10,6 +10,7 @@ import {
     Zap,
     Award,
     Briefcase,
+    Download,
 } from 'lucide-react';
 import styles from './WikiPortfolio.module.css';
 import Sidebar from './Sidebar';
@@ -17,6 +18,7 @@ import TableOfContents from './TableOfContents';
 import DynamicYearsCounter from './DynamicYearsCounter';
 import SkillTabs from './SkillTabs';
 import ContactFormModal from './ContactFormModal';
+import ProjectCard from './ProjectCard';
 
 const WikiPortfolio = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -147,6 +149,13 @@ const WikiPortfolio = () => {
                             }>
                             {darkMode ? <Sun size={20} /> : <Moon size={20} />}
                         </button>
+                        <a
+                            href="/sai_hari_kiran_resume.pdf"
+                            download
+                            className={styles.downloadResume}
+                            aria-label="Download Resume">
+                            Download Resume
+                        </a>
                         <a href="#references" className={styles.contactLink}>
                             Contact
                         </a>
@@ -211,11 +220,9 @@ const WikiPortfolio = () => {
                                                     size={16}
                                                     className={styles.infoIcon}
                                                 />{' '}
-                                                Tech Stack
+                                                Marital Status
                                             </th>
-                                            <td>
-                                                React, Node.js, Express.js, SQL
-                                            </td>
+                                            <td>Single</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -245,17 +252,12 @@ const WikiPortfolio = () => {
                             </div>
 
                             <p className={styles.leadParagraph}>
-                                <span className={styles.dropCap}>V</span>
-                                asupalli{' '}
-                                <span className={styles.highlight}>
-                                    Sai Hari Kiran
-                                </span>{' '}
-                                is a skilled Full Stack Developer with over{' '}
-                                <DynamicYearsCounter /> years of experience in
-                                web development and AI applications. He has
-                                worked with modern frontend frameworks, backend
-                                systems, and emerging AI technologies, allowing
-                                him to build end-to-end solutions
+                                Driven by a passion for innovation, web
+                                development has been my gateway to achieving it.
+                                I thrive on the excitement of continuous
+                                learning, eagerly expanding my knowledge each
+                                day. Being a developer is not just a career for
+                                me, it's a genuine pursuit of what I truly love.
                             </p>
 
                             {/* <p>
@@ -316,7 +318,19 @@ const WikiPortfolio = () => {
                                     </div>
                                 </div>
 
-                                <p>
+                                <div className={styles.timelineElement}>
+                                    <div className={styles.timelineMarker}>
+                                        2017
+                                    </div>
+                                    <div className={styles.timelineContent}>
+                                        <h3>SSC</h3>
+                                        {/* <h4>Secondary School Certificate</h4> */}
+                                        <p>New Life English Medium School</p>
+                                        <p>Score: 88%</p>
+                                    </div>
+                                </div>
+
+                                {/* <p>
                                     During college, he discovered his interest
                                     in programming and started exploring
                                     different technologies. In his final year,
@@ -334,10 +348,10 @@ const WikiPortfolio = () => {
                                     <blockquote>
                                         I think college is basically for fun and
                                         to prove you can do your chores, but
-                                        they’re not for learning.
+                                        they're not for learning.
                                     </blockquote>
                                     <cite>— Elon Musk</cite>
-                                </div>
+                                </div> */}
 
                                 {/* <p>
                                     As a student, he actively participated in
@@ -403,7 +417,7 @@ const WikiPortfolio = () => {
                                     </div> */}
                                 </div>
 
-                                <p>
+                                {/* <p>
                                     Since June 2023, Vasupalli Sai Hari Kiran
                                     has been employed as a Full Stack Developer
                                     at X-verity, where he has established
@@ -413,142 +427,24 @@ const WikiPortfolio = () => {
                                     demonstrated exceptional proficiency in
                                     implementing modern web technologies to
                                     address complex business requirements.
-                                </p>
+                                </p> */}
 
-                                <div className={styles.projectCard}>
-                                    <div className={styles.projectCardHeader}>
-                                        <h4>
-                                            Corporate Website Development{' '}
-                                            <span style={{ fontSize: '14px' }}>
-                                                <a
-                                                    href="https://qcentrio.com/"
-                                                    target="_blank"
-                                                    className="flex items-center gap-1 text-blue-600 hover:underline">
-                                                    Visit{' '}
-                                                    <ExternalLink size={14} />
-                                                </a>
-                                            </span>
-                                        </h4>
-                                        {/* <span className={styles.projectBadge}>
-                                            Flagship Project
-                                        </span> */}
-                                    </div>
-                                    <p>
-                                        In Q3 2023, after months of training in
-                                        React, Kiran was assigned his first
-                                        project using Next.js. A 50-page dynamic
-                                        website for Qcentrio, a leading
-                                        industrial solutions provider. Despite
-                                        it being his first experience with
-                                        Next.js, he quickly adapted,
-                                        successfully handling the architecture,
-                                        SEO optimization, and performance
-                                        improvements. His work on the project
-                                        proved his ability to learn new
-                                        technologies efficiently and deliver
-                                        high-quality results.
-                                    </p>
-                                    <div className={styles.techStack}>
-                                        <span className={styles.techTag}>
-                                            Next.js
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            SEO
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            Responsive
-                                        </span>
-                                    </div>
-                                    {/* <div className={styles.projectMetrics}>
-                                        <div className={styles.metric}>
-                                            <span
-                                                className={styles.metricValue}>
-                                                40%
-                                            </span>
-                                            <span
-                                                className={styles.metricLabel}>
-                                                Improved load times
-                                            </span>
-                                        </div>
-                                        <div className={styles.metric}>
-                                            <span
-                                                className={styles.metricValue}>
-                                                35%
-                                            </span>
-                                            <span
-                                                className={styles.metricLabel}>
-                                                Increased traffic
-                                            </span>
-                                        </div>
-                                    </div> */}
-                                </div>
-
-                                <div className={styles.projectCard}>
-                                    <div className={styles.projectCardHeader}>
-                                        <h4>Content Management System</h4>
-                                    </div>
-                                    <p>
-                                        Following the successful deployment of
-                                        the Qcentrio website, Kiran developed a
-                                        small-scale content management app to
-                                        manage content for specific pages and
-                                        handle form submissions. This solution
-                                        streamlined content updates, allowing
-                                        the team to make changes more
-                                        efficiently and improving overall
-                                        workflow management.
-                                    </p>
-                                    <div className={styles.techStack}>
-                                        <span className={styles.techTag}>
-                                            Next.js
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            Rest API
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <div className={styles.projectCard}>
-                                    <div className={styles.projectCardHeader}>
-                                        <h4>
-                                            Electric Meter Management System{' '}
-                                            <span style={{ fontSize: '14px' }}>
-                                                <a
-                                                    href="https://lk-ea.co.in/TGNPDCL/"
-                                                    target="_blank"
-                                                    className="flex items-center gap-1 text-blue-600 hover:underline">
-                                                    Visit{' '}
-                                                    <ExternalLink size={14} />
-                                                </a>
-                                            </span>
-                                        </h4>
-                                    </div>
-                                    <p>
-                                        In a significant technical undertaking,
-                                        Kiran developed a comprehensive electric
-                                        meter management system for L&K, which
-                                        was later acquired by L&T. This
-                                        enterprise-grade application now serves
-                                        over 300 consumers, featuring real-time
-                                        consumption monitoring, automated
-                                        billing procedures, and detailed
-                                        analytics dashboards,
-                                    </p>
-                                    <div className={styles.techStack}>
-                                        <span className={styles.techTag}>
-                                            React.js
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            Express.js
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            Rest API
-                                        </span>
-                                        <span className={styles.techTag}>
-                                            Caching
-                                        </span>
-                                    </div>
-                                </div>
+                                <ul className={styles.bulletPoints}>
+                                    <li>
+                                        Currently working as a Full Stack Web
+                                        Developer, contributing to various
+                                        challenging projects
+                                    </li>
+                                    <li>
+                                        Developed and executed solutions,
+                                        continuously extended technical
+                                        capabilities
+                                    </li>
+                                    <li>
+                                        Consistently learned and applied new
+                                        technologies to meet project demands
+                                    </li>
+                                </ul>
                             </div>
                         </section>
 
@@ -575,70 +471,105 @@ const WikiPortfolio = () => {
                                     ? styles.activeSection
                                     : ''
                             }`}>
-                            <h2 className={styles.sectionTitle}>
-                                Notable Projects
-                                {/* <a href="#" className={styles.editLink}>
-                                    [edit]
-                                </a> */}
-                            </h2>
+                            <h2 className={styles.sectionTitle}>Projects</h2>
                             <div className={styles.sectionContent}>
                                 <div className={styles.projectGrid}>
                                     {[
                                         {
-                                            title: 'Qcentrio Corporate Website',
+                                            title: 'Custom Content Management System (CMS)',
                                             description:
-                                                'A comprehensive 50-page dynamic corporate website featuring advanced SEO optimization and sophisticated performance strategies.',
+                                                'Architected and developed a custom CMS application to streamline content management for internal and client-facing web applications.',
                                             technologies: [
                                                 'Next.js',
-                                                'SEO',
-                                                'Responsive',
+                                                'React',
+                                                'Node.js',
+                                                'SQL',
                                             ],
                                             achievements: [
-                                                'Successfully built and deployed the first Next.js project, improving development efficiency and maintainability.',
-                                                'Enhanced page speed and performance, achieving a 90+ SEO score on Google Lighthouse.',
-                                                'Developed a custom CMS for managing specific pages and handling form submissions efficiently.',
+                                                'Architected and developed a custom CMS application to streamline content management for internal and client-facing web applications.',
+                                                'Enabled dynamic control over blogs, service pages, landing pages, and other web content types.',
+                                                'Integrated form data management, empowering teams to collect and manage submissions effectively.',
+                                                "Delivered a scalable, user-friendly solution tailored to the organization's evolving content needs.",
+                                            ],
+                                            featured: false,
+                                            link: '',
+                                            gitLink: '',
+                                            videoUrl: null,
+                                        },
+                                        {
+                                            title: 'Qcentrio – Corporate Website Development',
+                                            description:
+                                                'Built a 50+ page dynamic website for Qcentrio, an AI-driven solutions provider, using Next.js to ensure high performance and SEO optimization.',
+                                            technologies: [
+                                                'Next.js',
+                                                'React',
+                                                'Custom CMS',
+                                            ],
+                                            achievements: [
+                                                'Built a 50+ page dynamic website for Qcentrio, an AI-driven solutions provider, using Next.js to ensure high performance and SEO optimization.',
+                                                'Seamlessly integrated the previously developed custom CMS, enabling easy content updates and form management.',
+                                                'Ensured responsive design, accessibility, and maintainability across all pages and components.',
                                             ],
                                             featured: false,
                                             link: 'https://qcentrio.com/',
                                             gitLink: '',
                                             videoUrl: null,
                                         },
-
                                         {
-                                            title: 'Electric Meter Management System',
+                                            title: 'Best Infra – Energy Management Platform',
                                             description:
-                                                'A comprehensive utility management dashboard serving over 300 consumers with real-time consumption tracking and automated billing.',
+                                                'Developed a web-based Energy Management Tool to monitor energy consumption, manage client usage, and automate billing processes.',
                                             technologies: [
-                                                'React.js',
-                                                'Express.js',
-                                                'Rest API',
-                                                'Caching',
+                                                'React',
+                                                'Node.js',
+                                                'REST APIs',
                                             ],
                                             achievements: [
-                                                'Developed an intuitive dashboard enabling real-time tracking of electricity consumption.',
-                                                'Optimized API performance, reducing response time by 50% through efficient caching mechanisms.',
-                                                'Implemented secure authentication and role-based access control for enhanced data security.',
+                                                'Developed a web-based Energy Management Tool to monitor energy consumption, manage client usage, and automate billing processes.',
+                                                'Implemented real-time tracking and analytics dashboards for energy units, offering actionable insights to clients.',
+                                                'Improved operational efficiency and billing transparency through smart automation features.',
                                             ],
                                             featured: false,
-                                            link: 'https://lk-ea.co.in/TGNPDCL',
+                                            link: '',
                                             gitLink: '',
                                             videoUrl: '/vids/lkea.mp4',
                                         },
                                         {
-                                            title: 'Image-to-3D Point Cloud Generator',
+                                            title: 'No-Code Dashboard Page Builder (In Progress)',
                                             description:
-                                                'An experimental AI-powered tool for generating accurate 3D point clouds from standard 2D images.',
+                                                'Building a no-code platform that enables users to create complete dashboard applications without writing a single line of code.',
                                             technologies: [
-                                                'Python',
-                                                'Pytorch',
-                                                'MLP',
-                                                'CNN',
-                                                'Neural Network',
+                                                'Next.js',
+                                                'React',
+                                                'Drag-and-Drop Libraries',
                                             ],
                                             achievements: [
-                                                'Developed a basic neural network to generate 3D point clouds from 2D images as a proof of concept.',
-                                                'Tested with a limited dataset, leading to initial overfitting but providing insights for future improvements.',
-                                                'Identified key challenges in generalizing point cloud generation, setting the stage for further research.',
+                                                'Building a no-code platform that enables users to create complete dashboard applications without writing a single line of code.',
+                                                'Provides a growing set of pre-built modules (Billing, Reports, Settings, Dashboards) and reusable UI components.',
+                                                "Features a drag-and-drop page builder to support custom module creation when templates aren't sufficient.",
+                                                'Supports one-click export of production-ready source code, ideal for non-technical users and rapid prototyping.',
+                                                'Focused on scalability, modular design, and usability using the Next.js framework.',
+                                            ],
+                                            featured: false,
+                                            link: '',
+                                            gitLink: '',
+                                            videoUrl: null,
+                                        },
+                                        {
+                                            title: 'Image to Point Cloud Generator (Prototype)',
+                                            description:
+                                                'Developed a proof-of-concept neural network to convert 2D images into 3D point clouds, aimed at applications in 3D reconstruction and computer vision.',
+                                            technologies: [
+                                                'Python',
+                                                'PyTorch',
+                                                'Neural Networks',
+                                                'Open3D',
+                                            ],
+                                            achievements: [
+                                                'Developed a proof-of-concept neural network to convert 2D images into 3D point clouds, aimed at applications in 3D reconstruction and computer vision.',
+                                                'Successfully overfitted on a small dataset to validate the model architecture and functionality during initial testing.',
+                                                'Utilized libraries such as PyTorch for model building and Open3D for point cloud visualization.',
+                                                'Currently planning to expand the project with a larger, more diverse dataset and incorporate regularization techniques for better generalization.',
                                             ],
                                             featured: false,
                                             link: '',
@@ -647,122 +578,14 @@ const WikiPortfolio = () => {
                                             videoUrl:
                                                 '/vids/img-point-cloud.mp4',
                                         },
-                                    ].map((project) => (
-                                        <div
-                                            key={project.title}
-                                            className={`${
-                                                styles.projectArticle
-                                            } ${
-                                                project.featured
-                                                    ? styles.featuredProject
-                                                    : ''
-                                            }`}>
-                                            {project.featured && (
-                                                <div
-                                                    className={
-                                                        styles.featuredBadge
-                                                    }>
-                                                    Featured
-                                                </div>
-                                            )}
-                                            <h3 className={styles.projectTitle}>
-                                                {project.title}
-                                            </h3>
-                                            <p
-                                                className={
-                                                    styles.projectDescription
-                                                }>
-                                                {project.description}
-                                            </p>
-                                            {project.videoUrl && (
-                                                <div
-                                                    className={
-                                                        styles.videoContainer
-                                                    }>
-                                                    <div
-                                                        className={
-                                                            styles.videoWrapper
-                                                        }>
-                                                        <video
-                                                            id={`video-${project.id}`}
-                                                            className={
-                                                                styles.video
-                                                            }
-                                                            src={
-                                                                project.videoUrl
-                                                            }
-                                                            controls
-                                                        />
-                                                    </div>
-                                                </div>
-                                            )}
-                                            <h4
-                                                className={
-                                                    styles.projectSubtitle
-                                                }>
-                                                Key Achievements
-                                            </h4>
-                                            <ul className={styles.projectList}>
-                                                {project.achievements.map(
-                                                    (achievement, index) => (
-                                                        <li key={index}>
-                                                            {achievement}
-                                                        </li>
-                                                    )
-                                                )}
-                                            </ul>
-
-                                            <div className={styles.techTags}>
-                                                {project.technologies.map(
-                                                    (tech) => (
-                                                        <span
-                                                            key={tech}
-                                                            className={
-                                                                styles.techTag
-                                                            }>
-                                                            {tech}
-                                                        </span>
-                                                    )
-                                                )}
-                                            </div>
-                                            <div
-                                                className={styles.projectLinks}>
-                                                {project.link.length > 0 && (
-                                                    <a
-                                                        target="_blank"
-                                                        href={project.link}
-                                                        className={
-                                                            styles.projectLink
-                                                        }>
-                                                        Visit
-                                                    </a>
-                                                )}
-                                                {project.gitLink.length > 0 && (
-                                                    <a
-                                                        target="_blank"
-                                                        href={project.gitLink}
-                                                        className={
-                                                            styles.projectLink
-                                                        }>
-                                                        Github Link
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </div>
+                                    ].map((project, index) => (
+                                        <ProjectCard
+                                            key={index}
+                                            project={project}
+                                            darkMode={darkMode}
+                                        />
                                     ))}
                                 </div>
-
-                                {/* <div className={styles.moreProjects}>
-                                    <a
-                                        href="#"
-                                        className={styles.moreProjectsLink}>
-                                        View more projects
-                                        <ChevronRight
-                                            size={16}
-                                            className={styles.moreIcon}
-                                        />
-                                    </a>
-                                </div> */}
                             </div>
                         </section>
 

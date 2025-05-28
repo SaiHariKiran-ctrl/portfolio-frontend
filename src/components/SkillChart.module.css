@@ -99,7 +99,7 @@
 }
 
 .category:nth-child(1) .barFill {
-    background: linear-gradient(90deg, #3366cc, #5e97f6);
+    background: linear-gradient(90deg, #001b50, #5e97f6);
 }
 
 .category:nth-child(2) .barFill {

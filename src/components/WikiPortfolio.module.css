@@ -1,13 +1,14 @@
 .container {
   min-height: 100vh;
   background-color: #ffffff;
-  transition: var(--transition);
+  transition: none;
 }
 
 /* Dark Mode Support */
 .darkMode {
   background-color: #121212;
   color: #e0e0e0;
+  transition: none;
 }
 
 .darkMode a {
@@ -21,6 +22,7 @@
 .darkMode .header {
   background-color: #1e1e1e;
   border-color: var(--border);
+  transition: none;
 }
 
 .darkMode .infobox {
@@ -68,7 +70,7 @@
   border-bottom: 1px solid var(--border);
   z-index: 100;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
+  transition: none;
 }
 
 .headerContent {
@@ -88,7 +90,7 @@
   padding: 0.5rem;
   cursor: pointer;
   display: block;
-  transition: var(--transition);
+  transition: transform 0.3s ease;
 }
 
 .menuToggle:hover {
@@ -105,11 +107,10 @@
   margin: 0;
   cursor: pointer;
   position: relative;
-  transition: var(--transition);
 }
 
 .headerTitle h1:hover {
-  color: #3366cc;
+  color: var(--primary-light);
 }
 
 .easterEgg {
@@ -117,7 +118,7 @@
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -161,7 +162,7 @@
   justify-content: center;
   padding: 0.25rem;
   border-radius: 50%;
-  transition: var(--transition);
+  transition: background-color 0.3s ease;
 }
 
 .darkModeToggle:hover {
@@ -173,25 +174,29 @@
 }
 
 .contactLink {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
-  transition: var(--transition);
   position: relative;
+  transition: none;
 }
 
-.contactLink:after {
+/* .contactLink:after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #3366cc;
+  background-color: #001b50;
   bottom: -2px;
   left: 0;
-  transition: var(--transition);
-}
+} */
 
 .contactLink:hover:after {
   width: 100%;
+  background-color: var(--primary-light);
+}
+
+.contactLink:hover{
+  color: #01349a;
 }
 
 /* Main Container */
@@ -297,7 +302,7 @@
 .avatar {
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, #3366cc, #5e97f6);
+  background: linear-gradient(135deg, #001b50, #5e97f6);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -347,7 +352,7 @@
 }
 
 .infoIcon {
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .infoIcon {
@@ -373,7 +378,7 @@
 }
 
 .infoboxLink {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -381,7 +386,7 @@
 }
 
 .infoboxLink:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
   transform: translateY(-1px);
 }
 
@@ -396,7 +401,7 @@
   font-size: 3em;
   line-height: 0.8;
   margin-right: 0.1em;
-  color: #3366cc;
+  color: #001b50;
   font-weight: bold;
 }
 
@@ -417,8 +422,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  transition: var(--transition);
   padding: 1rem;
+  transition: background-color 0.3s ease;
 }
 
 .section:hover {
@@ -471,7 +476,7 @@
 
 .editLink:hover {
   opacity: 1;
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 /* Timeline Elements */
@@ -483,7 +488,7 @@
 
 .timelineMarker {
   flex: 0 0 70px;
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   text-align: center;
   padding: 0.5rem;
@@ -510,7 +515,7 @@
   top: 1.1rem;
   width: 1.5rem;
   height: 2px;
-  background-color: #3366cc;
+  background-color: #001b50;
 }
 
 .timelineContent h3 {
@@ -523,7 +528,7 @@
   font-size: 1rem;
   font-weight: normal;
   margin: 0 0 0.3rem 0;
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .timelineContent h4 {
@@ -536,7 +541,7 @@
   margin-bottom: 0px;
   padding: 1.5rem;
   background-color: #f8f9fa;
-  border-left: 4px solid #3366cc;
+  border-left: 4px solid #001b50;
   font-style: italic;
   position: relative;
   transition: var(--transition);
@@ -580,7 +585,7 @@
 .currentPosition h4 {
   font-size: 1.1rem;
   margin: 0 0 0.2rem 0;
-  color: #3366cc;
+  color: #001b50;
   font-weight: normal;
 }
 
@@ -612,7 +617,7 @@
 .statNumber {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .statNumber {
@@ -659,7 +664,7 @@
 }
 
 .projectBadge {
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
@@ -681,7 +686,7 @@
 .metricValue {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .metricValue {
@@ -714,7 +719,7 @@
 }
 
 .techTag:hover {
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   transform: translateY(-2px);
 }
@@ -764,7 +769,7 @@
 
 .mockupHeader {
   height: 20%;
-  background-color: #3366cc;
+  background-color: #001b50;
 }
 
 .darkMode .mockupHeader {
@@ -779,7 +784,7 @@
 .mockupChart {
   width: 70%;
   height: 100%;
-  background: linear-gradient(135deg, #3366cc33, #3366cc11);
+  background: linear-gradient(135deg, #001b5033, #001b5011);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -790,7 +795,7 @@
   content: '';
   width: 60%;
   height: 40%;
-  background-color: #3366cc33;
+  background-color: #001b5033;
   position: absolute;
   bottom: 20%;
   left: 20%;
@@ -840,7 +845,7 @@
 }
 
 .tabLink:hover {
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .tabLink:hover {
@@ -848,8 +853,8 @@
 }
 
 .tabLink.active {
-  border-bottom-color: #3366cc;
-  color: #3366cc;
+  border-bottom-color: #001b50;
+  color: #001b50;
   font-weight: 500;
 }
 
@@ -884,7 +889,7 @@
 
 .skillLevel {
   height: 100%;
-  background: linear-gradient(90deg, #3366cc, #5e97f6);
+  background: linear-gradient(90deg, #001b50, #5e97f6);
   border-radius: 4px;
   transition: width 1s ease;
   animation: skillAnimation 1.5s ease forwards;
@@ -927,7 +932,7 @@
   position: absolute;
   width: 50%;
   height: 2px;
-  background-color: #3366cc;
+  background-color: #001b50;
   bottom: -5px;
   left: 0;
 }
@@ -952,7 +957,7 @@
   gap: 1rem;
   flex: 1;
   min-width: 250px;
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .darkMode .certBadge {
@@ -968,7 +973,7 @@
 .certIcon {
   width: 40px;
   height: 40px;
-  background-color: #3366cc;
+  background-color: #001b50;
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -1016,7 +1021,7 @@
 }
 
 .featuredProject {
-  border-top: 5px solid #3366cc;
+  border-top: 5px solid #001b50;
 }
 
 .darkMode .featuredProject {
@@ -1027,7 +1032,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   padding: 0.3rem 0.6rem;
   font-size: 0.8rem;
@@ -1083,11 +1088,10 @@
 }
 
 .projectLink {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   font-weight: 500;
   position: relative;
-  transition: var(--transition);
 }
 
 .darkMode .projectLink {
@@ -1095,7 +1099,7 @@
 }
 
 .projectLink:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 .projectLink:after {
@@ -1103,10 +1107,9 @@
   position: absolute;
   width: 0;
   height: 2px;
-  background-color: #3366cc;
+  background-color: #001b50;
   bottom: -3px;
   left: 0;
-  transition: var(--transition);
 }
 
 .darkMode .projectLink:after {
@@ -1126,11 +1129,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   font-weight: 500;
   padding: 0.5rem 1rem;
-  border: 1px solid #3366cc;
+  border: 1px solid #001b50;
   border-radius: 4px;
   transition: var(--transition);
 }
@@ -1141,7 +1144,7 @@
 }
 
 .moreProjectsLink:hover {
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   text-decoration: none;
 }
@@ -1174,7 +1177,7 @@
 .publicationIcon {
   width: 50px;
   height: 50px;
-  background-color: #3366cc;
+  background-color: #001b50;
   border-radius: 6px;
   flex-shrink: 0;
   transition: var(--transition);
@@ -1229,11 +1232,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.3rem;
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   margin-top: 0.8rem;
   font-weight: 500;
-  transition: var(--transition);
 }
 
 .darkMode .publicationLink {
@@ -1241,7 +1243,7 @@
 }
 
 .publicationLink:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 .awardBadge {
@@ -1291,7 +1293,7 @@
 }
 
 .graphDay {
-  background-color: #3366cc;
+  background-color: #001b50;
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -1345,7 +1347,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background-color: #3366cc;
+  background-color: #001b50;
 }
 
 .darkMode .externalCard:hover::after {
@@ -1355,12 +1357,12 @@
 .externalCardIcon {
   width: 50px;
   height: 50px;
-  background-color: #3366cc11;
+  background-color: #001b5011;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #3366cc;
+  color: #001b50;
   flex-shrink: 0;
   transition: var(--transition);
 }
@@ -1371,7 +1373,7 @@
 }
 
 .externalCard:hover .externalCardIcon {
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   transform: rotate(360deg);
 }
@@ -1413,7 +1415,7 @@
 }
 
 .externalCard:hover .externalCardLink {
-  color: #3366cc;
+  color: #001b50;
   transform: translate(2px, -2px);
 }
 
@@ -1425,9 +1427,9 @@
   margin-top: 2rem;
   text-align: center;
   padding: 2rem;
-  background: linear-gradient(45deg, #3366cc11, #3366cc22);
+  background: linear-gradient(45deg, #001b5011, #001b5022);
   border-radius: 8px;
-  transition: var(--transition);
+  transition: transform 0.3s ease;
 }
 
 .darkMode .contactCTA {
@@ -1449,13 +1451,13 @@
 
 .contactButton {
   display: inline-block;
-  background-color: #3366cc;
+  background-color: #001b50;
   color: white;
   padding: 0.8rem 1.5rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  transition: var(--transition);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .darkMode .contactButton {
@@ -1495,7 +1497,7 @@
 }
 
 .footerCategories a {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   margin: 0 0.2rem;
 }
@@ -1505,7 +1507,7 @@
 }
 
 .footerCategories a:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 .footerNavigation {
@@ -1515,7 +1517,7 @@
 }
 
 .footerLink {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   font-size: 0.9rem;
 }
@@ -1525,7 +1527,7 @@
 }
 
 .footerLink:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 /* Responsive Styles */
@@ -1741,4 +1743,61 @@
 
 .videoControl:hover {
   background-color: white;
+}
+
+.bulletPoints {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.bulletPoints li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.bulletPoints li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #001b50;
+}
+
+.darkMode .bulletPoints li:before {
+    color: #90caf9;
+}
+
+.downloadResume {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: #001b50;
+    text-decoration: none;
+    font-size: 0.9rem;
+    background-color: rgba(51, 102, 204, 0.1);
+    border: 1px solid #001b50;
+    transition: all 0.2s ease;
+    background-color: #001b50;
+    color: white;
+}
+
+.darkMode .downloadResume {
+    color: #90caf9;
+    background-color: rgba(144, 202, 249, 0.1);
+    border-color: #90caf9;
+}
+
+.downloadResume:hover {
+    background-color: #001b50;
+    color: white;
+    transform: translateY(-1px);
+}
+
+.darkMode .downloadResume:hover {
+    background-color: #90caf9;
+    color: #121212;
 }

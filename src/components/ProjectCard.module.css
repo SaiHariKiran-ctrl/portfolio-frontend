@@ -1,17 +1,19 @@
 .projectCard {
-    background-color: #f8f9fa;
+    background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    transition: var(--transition);
-    overflow: hidden;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
 }
 
 .darkMode {
     background-color: #1e1e1e;
     border-color: var(--border);
+    transition: none;
 }
 
 .projectCard:hover {
@@ -24,7 +26,7 @@
 }
 
 .featured {
-    border-top: 4px solid #3366cc;
+    border-top: 4px solid #001b50;
 }
 
 .darkMode.featured {
@@ -35,7 +37,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: #3366cc;
+    background-color: #001b50;
     color: white;
     padding: 0.3rem 0.8rem;
     font-size: 0.8rem;
@@ -114,7 +116,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    /* margin-bottom: 1.5rem; */
 }
 
 .techTag {
@@ -124,7 +126,7 @@
     padding: 0.25rem 0.6rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    transition: var(--transition);
+    transition: transform 0.3s ease;
 }
 
 .darkMode .techTag {
@@ -134,9 +136,9 @@
 }
 
 .techTag:hover {
-    background-color: #3366cc;
+    background-color: #001b50;
     color: white;
-    border-color: #3366cc;
+    border-color: #001b50;
     transform: translateY(-2px);
 }
 
@@ -146,50 +148,110 @@
     border-color: #90caf9;
 }
 
+.viewDetailsButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg, #001b50, #5e97f6);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0.75rem 0;
+    box-shadow: 0 2px 4px rgba(51, 102, 204, 0.2);
+}
+
+.darkMode .viewDetailsButton {
+    background: linear-gradient(135deg, #90caf9, #64b5f6);
+    color: #121212;
+    box-shadow: 0 2px 4px rgba(144, 202, 249, 0.2);
+}
+
+.viewDetailsButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(51, 102, 204, 0.3);
+}
+
+.darkMode .viewDetailsButton:hover {
+    box-shadow: 0 4px 8px rgba(144, 202, 249, 0.3);
+}
+
+.viewDetailsButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(51, 102, 204, 0.2);
+}
+
+.viewDetailsButton svg {
+    transition: transform 0.3s ease;
+}
+
+.viewDetailsButton:hover svg {
+    transform: translateY(2px);
+}
+
 .expandedContent {
-    margin: 1rem 0;
+    margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px dashed #a2a9b1;
-    animation: fadeIn 0.3s ease;
+    border-top: 1px solid var(--border-color);
 }
 
-.darkMode .expandedContent {
-    border-top: 1px dashed #444;
+.achievementsList {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(51, 102, 204, 0.05);
+    border-radius: 6px;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+.darkMode .achievementsList {
+    background: rgba(144, 202, 249, 0.05);
 }
 
 .achievementsList h4 {
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
     font-size: 1rem;
-    margin: 0 0 0.8rem 0;
     font-weight: 600;
 }
 
 .achievementsList ul {
-    list-style-type: disc;
-    padding-left: 1.5rem;
-    margin: 0 0 1.5rem 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .achievementsList li {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
     line-height: 1.5;
+}
+
+.achievementsList li:last-child {
+    margin-bottom: 0;
+}
+
+.achievementsList li::before {
+    content: "•";
+    position: absolute;
+    left: 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
 }
 
 .projectImage {
     margin: 1rem 0;
-    height: 150px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .mockupDisplay {
@@ -283,11 +345,11 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    color: #3366cc;
+    color: #001b50;
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease;
     position: relative;
 }
 
@@ -302,8 +364,8 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #3366cc;
-    transition: var(--transition);
+    background-color: #001b50;
+    transition: width 0.3s ease;
 }
 
 .darkMode .actionLink:after {
@@ -316,4 +378,47 @@
 
 .actionLink:hover {
     transform: translateY(-2px);
+}
+
+.videoContainer {
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.videoPlayer {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: contain;
+}
+
+.videoButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #001b50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.videoButton:hover {
+    background-color: #254e8c;
+    transform: translateY(-2px);
+}
+
+.darkMode .videoButton {
+    background-color: #90caf9;
+    color: #121212;
+}
+
+.darkMode .videoButton:hover {
+    background-color: #42a5f5;
 }

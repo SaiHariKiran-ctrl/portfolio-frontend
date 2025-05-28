@@ -24,7 +24,7 @@
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #3366cc, #5e97f6);
+    background: linear-gradient(135deg, #001b50, #5e97f6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,7 +65,7 @@
 .progress {
     height: 100%;
     width: 30%;
-    background: linear-gradient(90deg, #3366cc, #5e97f6);
+    background: linear-gradient(90deg, #001b50, #5e97f6);
     border-radius: 2px;
     animation: loading 1.5s infinite;
 }

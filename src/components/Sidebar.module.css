@@ -106,7 +106,7 @@
   display: flex;
   align-items: center;
   padding: 0.7rem 0.5rem;
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   border-radius: 4px;
   transition: var(--transition);
@@ -121,7 +121,7 @@
   top: 0;
   height: 100%;
   width: 0;
-  background-color: #3366cc;
+  background-color: #001b50;
   opacity: 0.1;
   transition: var(--transition);
 }
@@ -167,7 +167,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #3366cc;
+  color: #001b50;
   transition: var(--transition);
 }
 
@@ -197,7 +197,7 @@
 }
 
 .sectionHeader:hover {
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .sectionHeader:hover {
@@ -255,7 +255,7 @@
 .toolLink,
 .languageLink,
 .relatedLink {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   font-size: 0.95rem;
   display: inline-block;
@@ -273,8 +273,7 @@
 .toolLink:hover,
 .languageLink:hover,
 .relatedLink:hover {
-  text-decoration: underline;
-  transform: translateX(2px);
+  color: var(--primary-light);
 }
 
 .activeLang {
@@ -287,7 +286,7 @@
   content: '•';
   position: absolute;
   left: 0;
-  color: #3366cc;
+  color: #001b50;
 }
 
 .darkMode .activeLang:before {
@@ -318,7 +317,7 @@
 }
 
 .editProfile {
-  color: #3366cc;
+  color: #001b50;
   text-decoration: none;
   display: inline-block;
   transition: var(--transition);
@@ -329,7 +328,7 @@
 }
 
 .editProfile:hover {
-  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 @media screen and (min-width: 769px) {

@@ -112,7 +112,7 @@ const SkillChart = ({ darkMode }) => {
                     <div className={styles.legendItem}>
                         <span
                             className={styles.legendColor}
-                            style={{ backgroundColor: '#3366cc' }}></span>
+                            style={{ backgroundColor: '#001b50' }}></span>
                         <span>Frontend</span>
                     </div>
                     <div className={styles.legendItem}>

@@ -154,11 +154,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-decoration: none !important;
 }
 
 :root {
-  --primary: #3366cc;
+  --primary: #001b50;
   --primary-light: #5e97f6;
   --primary-dark: #254e99;
   --neutral-50: #f8f9fa;
@@ -205,8 +204,8 @@ body {
   line-height: 1.6;
   color: var(--text);
   background-color: var(--background);
-  transition: var(--transition);
   overflow-x: hidden;
+  transition: none;
 }
 
 h1,
@@ -220,12 +219,12 @@ h6 {
 
 a {
   color: var(--primary);
-  text-decoration: none;
-  transition: var(--transition);
+  text-decoration: none !important;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #001b50;
+  text-decoration: none !important;
 }
 
 /* Remove button styling */

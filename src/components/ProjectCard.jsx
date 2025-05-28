@@ -1,17 +1,8 @@
-import React, { useState } from 'react';
-import {
-    ExternalLink,
-    ChevronDown,
-    ChevronUp,
-    GitBranch,
-    Code,
-    Star,
-} from 'lucide-react';
+import React from 'react';
+import { ExternalLink, GitBranch, Code, Star } from 'lucide-react';
 import styles from './ProjectCard.module.css';
 
 const ProjectCard = ({ project, darkMode }) => {
-    const [expanded, setExpanded] = useState(false);
-
     return (
         <div
             className={`${styles.projectCard} ${
@@ -23,25 +14,21 @@ const ProjectCard = ({ project, darkMode }) => {
 
             <div className={styles.projectHeader}>
                 <h3 className={styles.projectTitle}>{project.title}</h3>
-                <button
-                    className={styles.expandButton}
-                    onClick={() => setExpanded(!expanded)}
-                    aria-label={
-                        expanded
-                            ? 'Collapse project details'
-                            : 'Expand project details'
-                    }>
-                    {expanded ? (
-                        <ChevronUp size={18} />
-                    ) : (
-                        <ChevronDown size={18} />
-                    )}
-                </button>
             </div>
 
-            <p className={styles.projectDescription}>{project.description}</p>
+            {project.videoUrl && (
+                <div className={styles.videoContainer}>
+                    <video
+                        className={styles.videoPlayer}
+                        src={project.videoUrl}
+                        controls
+                    />
+                </div>
+            )}
 
-            <div className={styles.projectStats}>
+            {/* <p className={styles.projectDescription}>{project.description}</p> */}
+
+            {/* <div className={styles.projectStats}>
                 <div className={styles.statItem}>
                     <Star size={16} />
                     <span>{project.stars || 0}</span>
@@ -54,6 +41,15 @@ const ProjectCard = ({ project, darkMode }) => {
                     <Code size={16} />
                     <span>{project.language || 'Mixed'}</span>
                 </div>
+            </div> */}
+
+            <div className={styles.achievementsList}>
+                <h4>Key Achievements</h4>
+                <ul>
+                    {project.achievements.map((achievement, index) => (
+                        <li key={index}>{achievement}</li>
+                    ))}
+                </ul>
             </div>
 
             <div className={styles.techTags}>
@@ -64,64 +60,46 @@ const ProjectCard = ({ project, darkMode }) => {
                 ))}
             </div>
 
-            {expanded && (
-                <div className={styles.expandedContent}>
-                    <div className={styles.achievementsList}>
-                        <h4>Key Achievements</h4>
-                        <ul>
-                            {project.achievements.map((achievement, index) => (
-                                <li key={index}>{achievement}</li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {project.image && (
-                        <div className={styles.projectImage}>
-                            <div className={styles.mockupDisplay}>
-                                <div className={styles.mockupBrowser}>
-                                    <div className={styles.browserControls}>
-                                        <span
-                                            className={
-                                                styles.browserCircle
-                                            }></span>
-                                        <span
-                                            className={
-                                                styles.browserCircle
-                                            }></span>
-                                        <span
-                                            className={
-                                                styles.browserCircle
-                                            }></span>
-                                    </div>
-                                    <div className={styles.browserContent}>
-                                        <div
-                                            className={
-                                                styles.browserPlaceholder
-                                            }></div>
-                                    </div>
-                                </div>
+            {project.image && (
+                <div className={styles.projectImage}>
+                    <div className={styles.mockupDisplay}>
+                        <div className={styles.mockupBrowser}>
+                            <div className={styles.browserControls}>
+                                <span className={styles.browserCircle}></span>
+                                <span className={styles.browserCircle}></span>
+                                <span className={styles.browserCircle}></span>
+                            </div>
+                            <div className={styles.browserContent}>
+                                <div
+                                    className={styles.browserPlaceholder}></div>
                             </div>
                         </div>
-                    )}
+                    </div>
                 </div>
             )}
 
-            <div className={styles.projectActions}>
-                <a
-                    href={project.demoUrl || '#'}
-                    className={styles.actionLink}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    Live Demo <ExternalLink size={14} />
-                </a>
-                <a
-                    href={project.codeUrl || '#'}
-                    className={styles.actionLink}
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    View Code <ExternalLink size={14} />
-                </a>
-            </div>
+            {(project.link || project.gitLink) && (
+                <div className={styles.projectActions}>
+                    {project.link && (
+                        <a
+                            href={project.link}
+                            className={styles.actionLink}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Live Demo <ExternalLink size={14} />
+                        </a>
+                    )}
+                    {project.gitLink && (
+                        <a
+                            href={project.gitLink}
+                            className={styles.actionLink}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            View Code <ExternalLink size={14} />
+                        </a>
+                    )}
+                </div>
+            )}
         </div>
     );
 };
